@@ -37,3 +37,5 @@ jobs:
           path: "**/*.apk"
       - name: Debug APK location
         run: find app -type f -name "*.apk" || true
+      - name: Debug APK folder
+        run: ls -R app/build/outputs || true
