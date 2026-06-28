@@ -35,3 +35,5 @@ jobs:
         with:
           name: DAW-APK
           path: "**/*.apk"
+      - name: Debug APK location
+        run: find app -type f -name "*.apk" || true
