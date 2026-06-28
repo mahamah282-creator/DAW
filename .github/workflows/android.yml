@@ -18,14 +18,20 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Make gradlew executable
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Grant permissions
         run: chmod +x gradlew
 
-      - name: Build APK
+      - name: Build Debug APK
         run: ./gradlew assembleDebug
+
+      - name: Find APK
+        run: find . -name "*.apk"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: DAW-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: "**/*.apk"
