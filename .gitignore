@@ -1,0 +1,16 @@
+# Gradle cache
+.gradle/
+build/
+
+# Gradle distribution
+gradle-8.2/
+gradle-8.2-bin.zip
+
+# Local properties
+local.properties
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
